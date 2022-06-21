@@ -1,4 +1,4 @@
-# easyexcel-read-convet
+# easyexcel-read-convert
 
 在easyexcel基础上进行一些工具类编写，能够做到直接将读取出来的数据转换成具体的不同类型的字段，如BigDecimal类型或者LocalDate类型等...
 
@@ -48,4 +48,15 @@ public class CommonEasyExcelListenerTest{
     }
 
 }
+```
+
+## 测试结果
+![img_1.png](img_1.png)
+![img.png](img.png)
+
+```text
+读取内容: ConvertWrap(obj=ExcelImportBo(rowNum=1, date=2021-01-01, customerName=xx1, productName=MacBook Pro M1 Pro 32G&512G, quantity=1, price=19999.9, taxFlag=true), exceptions=[]), 校验信息: [单价不能超过10000]
+读取内容: ConvertWrap(obj=ExcelImportBo(rowNum=null, date=2022-02-02, customerName=yy2, productName=iPhone 14 Pro, quantity=2, price=8999, taxFlag=true), exceptions=[]), 校验信息:
+读取内容: ConvertWrap(obj=ExcelImportBo(rowNum=3, date=2021-01-01, customerName=zz3, productName=AirPods Pro, quantity=3, price=null, taxFlag=false), exceptions=[ConvertWrap.Exception(msg=单价格式不正确, fieldType=class java.math.BigDecimal, value=1400.99元)]), 校验信息: [请填入单价]
+读取内容: ConvertWrap(obj=ExcelImportBo(rowNum=4, date=2022-02-02, customerName=pp4, productName=Apple Watch Series7, quantity=4, price=-100, taxFlag=false), exceptions=[]), 校验信息: [单价必须大于0]
 ```
